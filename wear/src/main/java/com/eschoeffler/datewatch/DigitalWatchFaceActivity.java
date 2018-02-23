@@ -82,7 +82,7 @@ public class DigitalWatchFaceActivity extends EventWatchFaceActivity {
       mNextEvent.setText("");
       mTimeTill.setText("");
     } else {
-      mNextEvent.setText(nextEvent.title);
+      mNextEvent.setText(nextEvent.title.substring(0, 1).toUpperCase() + nextEvent.title.substring(1));
       mTimeTill.setText(getTimeUntilStr(nextEvent, now));
     }
   }
