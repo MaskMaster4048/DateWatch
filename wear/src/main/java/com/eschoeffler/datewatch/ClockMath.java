@@ -5,10 +5,12 @@ import java.util.GregorianCalendar;
 
 /**
  * Created by eschoeffler on 11/9/14.
+ * Tweaked by Logan Plumlee on 2/22/18.
  */
 public class ClockMath {
 
   public static final long MILLIS_PER_HALF_DAY = 12 * 60 * 60 * 1000;
+  public static final long MILLIS_PER_FULL_DAY = MILLIS_PER_HALF_DAY * 2;
   public static final long MILLIS_PER_HOUR = 60 * 60 * 1000;
   public static final long MILLIS_PER_MINUTE =  60 * 1000;
 
@@ -19,6 +21,15 @@ public class ClockMath {
     midnight.set(Calendar.SECOND, 0);
     long millisSinceMidnight = time - midnight.getTimeInMillis();
     return 360 * ((float) millisSinceMidnight / MILLIS_PER_HALF_DAY);
+  }
+  
+  public static float getFullDayDegrees(long time) {
+    Calendar midnight = new GregorianCalendar();
+    midnight.set(Calendar.HOUR_OF_DAY, 0);
+    midnight.set(Calendar.MINUTE, 0);
+    midnight.set(Calendar.SECOND, 0);
+    long millisSinceMidnight = time - midnight.getTimeInMillis();
+    return 360 * ((float) millisSinceMidnight / MILLIS_PER_FULL_DAY);
   }
 
   public static float getHourDegrees(long time) {
