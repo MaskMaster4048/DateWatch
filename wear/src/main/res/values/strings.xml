@@ -4,6 +4,6 @@
   <string name="analog_name">Analog DW</string>
   <string name="digital_name">Digital DW</string>
   <string name="now">Now:</string>
-  <string name="one_min">1 min</string>
-  <string name="minutes">%1$d mins</string>
+  <string name="one_min">1 min till</string>
+  <string name="minutes">%1$d mins till</string>
 </resources>
